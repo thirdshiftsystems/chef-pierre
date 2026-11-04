@@ -59,7 +59,7 @@ Step text is chunked as `Step \n 1 \n ...`; read the window in two passes if
 the last steps fall outside it. The nutrition line, yield and any `Tip`
 (ingredient substitutions) sit in the same window and belong in the saved file.
 
-### EatingWell (and other Cloudflare sites) — curl is blocked (browser route: not on the droplet)
+### EatingWell (and other Cloudflare sites) — curl is blocked (browser route: not on the agent host)
 
 `curl` returns **403 + a JS interstitial**. Use `browser_navigate` instead: it
 renders the page and the accessibility snapshot contains the full Ingredients
@@ -166,7 +166,7 @@ banked-or-not, and the recounted bank total.
   recipe. If extraction fails for a winner, tell the voters the source is
   fetch-blocked and ask for a paste — do not fill gaps with invented quantities.
 - **Count the bank from disk.** The running count in the log drifts. Recount with
-  `ls ~/.hermes/profiles/chef_pierre/kb/recipes/*.md | wc -l` and subtract the
+  `ls ~/.hermes/profiles/<profile>/kb/recipes/*.md | wc -l` and subtract the
   non-mains (grep `Category:` — sides and appetizers live in the same directory).
   Report mains-only and say so.
 - **Hold the tally until both voters score.** One voter's numbers (even a 9)
