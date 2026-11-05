@@ -77,7 +77,7 @@ The `sample-recipes/` folder holds four starter recipes in the exact format
 the recipe tools expect (copy them into your `kb/recipes/` to use them):
 **Çılbır** (Turkish poached eggs with garlic yogurt & chili butter),
 **Saganaki** (Greek flaming pan cheese — a Detroit classic),
-**Detroit-style Coney Dogs**, and **Detroit-style Deep Dish Pizza**.
+**Detroit-style Coney Dogs**, and **Detroit-style Deep Dish Pizza**.  Whatupdoe.
 
 ## Installation
 
