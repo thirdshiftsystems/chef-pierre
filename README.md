@@ -33,6 +33,17 @@ technique, and runs his own weekly pantry-hygiene schedule.
 - Adds items to your real Kroger/Ralphs cart via the public Kroger API.
   Add-only and confirm-first — checkout is always yours, in the app
 
+**Multi-member household support**
+- Honors each family member's dietary restrictions and preferences — he
+  maintains per-person notes (allergies, intolerances, hard NOs, favorites)
+  in `kb/house_rules.md` and flags any recipe that conflicts before it ever
+  reaches a ballot or a plate
+- Interacts with the entire household, not just one admin — via Slack or
+  Discord, every family member can talk to him, and the recipe-vote program
+  lets everyone score the week's proposed dinners; he tallies the votes and
+  saves the winners (he'll even confirm voter identity if two people share
+  an account)
+
 **Recipes (recipe)**
 - Save recipes from any URL with real ingredients + method extracted
   (recipe-source-extraction)
