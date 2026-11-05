@@ -155,8 +155,4 @@ reflect *your* household.
 - Everything is markdown + stdlib Python. No dependencies beyond Hermes and
   (optionally) a Kroger developer account.
 
-## Deliberately excluded (household-private)
-- `kb/` (pantry, house rules, feedback logs) — household dietary and personal info
-- `memories/`, `SOUL.md` — personal notes and identity context
-- `creds.json` / `tokens.json` — Kroger OAuth secrets (account-bound)
-- Cron runtime state
+
