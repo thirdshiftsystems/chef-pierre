@@ -6,6 +6,11 @@ and your Hermes becomes a chef who plans dinners, runs recipe programs,
 maintains a living pantry, builds Kroger grocery carts, teaches cooking
 technique, and runs his own weekly pantry-hygiene schedule.
 
+He works for **the whole household**: he honors each family member's dietary
+restrictions and preferences, and he lives in your Slack or Discord so every
+family member can talk to him directly — including the weekly recipe vote,
+where everyone scores the proposed dinners and he tallies the winners.
+
 ## What Chef Pierre can do
 
 **Core kitchen (pierre-kitchen)**
