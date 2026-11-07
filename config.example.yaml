@@ -1,0 +1,42 @@
+# Chef Pierre example settings for a Hermes profile (config.yaml).
+# Copy into your profile folder and adjust. Never put API keys or tokens in
+# this file; Hermes keeps those in .env and auth.json.
+#
+# Lesson learned: free models are shared by everyone using them and get
+# rate limited ("fair-share" 429s) at busy times, and free catalogs rotate
+# every few weeks. So:
+#   - chat runs on a free model, with several free backups from DIFFERENT
+#     vendors, and a cheap paid model as the very last resort
+#   - scheduled jobs (recipe votes, pantry sweep) set their own model to a
+#     stable paid one, so they never miss their slot
+#   - image reading gets its own vision-capable model
+# Model names below are examples from the Nous Portal catalog at the time of
+# writing. Check what your provider currently offers before using them.
+
+model:
+  default: meituan/longcat-2.5:free            # free main chat model
+  provider: nous
+  base_url: https://inference-api.nousresearch.com/v1
+
+agent:
+  reasoning_effort: medium
+  api_max_retries: 2          # give up on a busy model sooner and move down the list
+
+auxiliary:
+  vision:                     # reading photos (receipts, labels, dishes)
+    provider: nous
+    model: deepseek/deepseek-v4-flash-vision-exp
+
+fallback_providers:           # tried in order when the main model is busy
+  - provider: nous
+    model: stepfun/step-3.7-flash:free
+    base_url: https://inference-api.nousresearch.com/v1
+  - provider: nous
+    model: reflection/beam-1.0-501b-a23b:free
+    base_url: https://inference-api.nousresearch.com/v1
+  - provider: nous
+    model: upstage/solar-mini4:free
+    base_url: https://inference-api.nousresearch.com/v1
+  - provider: nous            # paid last resort, so Pierre always answers
+    model: deepseek/deepseek-v4.1-flash
+    base_url: https://inference-api.nousresearch.com/v1

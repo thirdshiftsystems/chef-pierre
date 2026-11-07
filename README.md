@@ -148,12 +148,25 @@ In Hermes, create one cron job (via `cronjob_manage` or your scheduler):
 - **Deliver:** your chat
 - **Prompt:** see `cron/pantry-depreciation-sweep.md` in this package
 
+Then add your weekly recipe votes the same way: one job per vote day, with the
+skills, schedule and prompt from `cron/recipe-vote.md`. Give scheduled jobs a
+stable paid model; free models get rate limited at busy times, and a vote that
+fails to post is a missed week.
+
+### Settings (`config.yaml`)
+`config.example.yaml` shows a setup that holds up well: a free main chat
+model, several free backups from different vendors, a cheap paid model as the
+last resort, and a separate vision model for photos. Free model catalogs
+rotate, so check what your provider currently offers before copying the names.
+
 ### 5. Give him a soul (recommended)
 Chef Pierre behaves best with a persona/system prompt defining: warm brief
 Slack-style voice, kitchen-only scope, food-safety numbers only from cited
 USDA/FDA sources, never spending money or checking out, and reading
-`kb/house_rules.md` before suggesting anything. Write your own — it should
-reflect *your* household.
+`kb/house_rules.md` before suggesting anything. Start from `SOUL.example.md`:
+copy it to `SOUL.md` in your Hermes profile folder and fill in the
+`{{PLACEHOLDERS}}`. Household details (diets, appliances, dislikes) go in
+`kb/house_rules.md`, not in the soul.
 
 To turn on Recipe Blitz onboarding (v1.2), add a short paragraph to the soul
 telling Pierre to check the recipe vault at the start of a conversation and,
