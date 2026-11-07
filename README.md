@@ -56,6 +56,11 @@ where everyone scores the proposed dinners and he tallies the winners.
   Wayback Machine label research (packaged-recipe-recreation)
 - Run a household recipe-vote program: research candidates, poll the family,
   auto-save winners (recipe-vote-poll / recipe-vote-schedule)
+- **Recipe Blitz onboarding (recipe-blitz, new in v1.2):** when a new
+  household's recipe vault has fewer than 50 cards, Pierre offers a blitz of
+  frequent family votes (3 recipes per vote, twice a week by default). He asks
+  how many cards to collect (50 suggested) and how often to vote, saves every
+  recipe that scores 8/10 or higher, and stops on his own when the vault is full
 - Skillet egg-in-a-hole technique card (toad-in-a-hole)
 
 **Cooking technique (culinary-techniques)**
@@ -149,6 +154,12 @@ Slack-style voice, kitchen-only scope, food-safety numbers only from cited
 USDA/FDA sources, never spending money or checking out, and reading
 `kb/house_rules.md` before suggesting anything. Write your own — it should
 reflect *your* household.
+
+To turn on Recipe Blitz onboarding (v1.2), add a short paragraph to the soul
+telling Pierre to check the recipe vault at the start of a conversation and,
+when the `recipe-blitz` skill says so, offer the blitz once at the end of his
+reply. The skill handles the rest: the setup questions, the vote schedule and
+stopping at the target.
 
 ## Notes
 
